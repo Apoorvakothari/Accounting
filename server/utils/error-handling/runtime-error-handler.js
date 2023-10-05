@@ -1,5 +1,5 @@
-import logger from "../../configs/logger.js";
-import genericError from "../../errors/generic.error.js";
+const { logger } = require("../../config/logger.js");
+const genericError = require("../../errors/generic.js");
 
 /**
  * @title Error Converter
@@ -10,7 +10,7 @@ import genericError from "../../errors/generic.error.js";
  * @param {Response} res - The response object.
  * @param {NextFunction} next - The next function.
  */
-export const errorConverter = (error, req, res, next) => {
+const errorConverter = (error, req, res, next) => {
   const message = error.message
     ? error.message
     : "An error occurred while processing your request...";
@@ -39,7 +39,7 @@ export const errorConverter = (error, req, res, next) => {
  * @param {Response} res - The response object.
  * @param {NextFunction} next - The next function.
  */
-export const errorHandler = (error, req, res, next) => {
+const errorHandler = (error, req, res, next) => {
   logger.error(`${error.code}:${error.status} - ${error.message}`);
 
   return res.status(error.status).json({
@@ -47,4 +47,9 @@ export const errorHandler = (error, req, res, next) => {
     error: error,
     data: null,
   });
+};
+
+module.exports = {
+  errorConverter,
+  errorHandler,
 };

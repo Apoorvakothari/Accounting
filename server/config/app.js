@@ -2,10 +2,10 @@ const cors = require("cors");
 const express = require("express");
 const helmet = require("helmet");
 
-import {
+const {
   errorConverter,
   errorHandler,
-} from "../utils/error-handling/runtime-error-handler";
+} = require("../utils/error-handling/runtime-error-handler");
 
 const app = express();
 
@@ -19,7 +19,7 @@ app.use(cors());
 app.options("*", cors());
 
 /* API routes */
-app.use(`/api`, routes);
+// app.use(`/api`, routes);
 
 /* Error Handling */
 app.use(errorConverter);
