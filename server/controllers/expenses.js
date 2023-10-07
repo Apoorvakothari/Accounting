@@ -43,7 +43,7 @@ const retrieve = async(req, res) => {
         date: -1,
       });
       res.json({
-        message: "List of expense retrived successfully",
+        message: "List of expenses retrieved successfully",
         data: expenses,
         error: null,
       });
