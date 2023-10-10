@@ -1,40 +1,41 @@
 const mongoose = require("mongoose");
+const bcrypt = require("bcrypt");
+
 const Schema = mongoose.Schema;
 
-const incomeSchema = new Schema(
+const SALT_ROUNDS = 6;
+
+const userSchema = new Schema(
   {
-    description: {
+    name: { type: String, required: true },
+    businessName: { type: String, required: true },
+    email: {
       type: String,
+      unique: true,
+      trim: true,
+      lowercase: true,
       required: true,
     },
-    amount: {
-      type: Number,
-      required: true,
-    },
-    category: {
+    password: {
       type: String,
-      enum: ["Sales", "Uncategorized Income"],
       required: true,
-    },
-    date: {
-      type: Date,
-      required: true,
-    },
-    account: {
-      type: String,
-      enum: ["Checking", "Savings", "Credit Card", "Cash"],
-    },
-    notes: {
-      type: String,
-    },
-    user: {
-      type: Schema.Types.ObjectId,
-      ref: "User",
     },
   },
   {
     timestamps: true,
+    toJSON: {
+      transform: function (doc, ret) {
+        delete ret.password;
+        return ret;
+      },
+    },
   }
 );
 
-module.exports = mongoose.model("Income", incomeSchema);
+userSchema.pre("save", async function (next) {
+  if (!this.isModified("password")) return next();
+  this.password = await bcrypt.hash(this.password, SALT_ROUNDS);
+  return next();
+});
+
+module.exports = mongoose.model("User", userSchema);

@@ -1,11 +1,12 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const expensesCtrl = require('../../controllers/api/expenses');
-const ensureLoggedIn = require('../../config/ensureLoggedIn');
 
-router.post('/', ensureLoggedIn, expensesCtrl.create);
-router.get('/', ensureLoggedIn, expensesCtrl.retrieve)
-router.delete('/:id', ensureLoggedIn, expensesCtrl.delete);
-router.put('/:id', ensureLoggedIn, expensesCtrl.update);
+const expensesCtrl = require("../controllers/expenses.js");
+const isAuth = require("../middleware/is-auth.js");
+
+router.post("/", isAuth, expensesCtrl.create);
+router.get("/", isAuth, expensesCtrl.retrieve);
+router.delete("/:id", isAuth, expensesCtrl.delete);
+router.put("/:id", isAuth, expensesCtrl.update);
 
 module.exports = router;

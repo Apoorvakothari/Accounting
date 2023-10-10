@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
 const http = require("http");
 
+require("./models/user");
+require("./models/expense");
+require("./models/income");
+
 const { createServer } = http;
 
 const app = require("./config/app.js");
@@ -10,13 +14,13 @@ const unexpectedErrorHandler = require("./utils/error-handling/unexpected-error-
 
 const server = createServer(app);
 
-// mongoose.connect(env.mongoose.url).then(async () => {
-//   logger.info(`Connected to database`);
+mongoose.connect(env.mongoose.url).then(async () => {
+  logger.info(`Connected to database`);
 
-server.listen(env.port, () => {
-  logger.info(`Server started at ${env.base.url} on port ${env.port}`);
+  server.listen(env.port, () => {
+    logger.info(`Server started at ${env.base.url} on port ${env.port}`);
+  });
 });
-// });
 
 process.on("uncaughtException", (error) =>
   unexpectedErrorHandler(server, error)

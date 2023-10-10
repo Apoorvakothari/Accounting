@@ -1,46 +1,42 @@
 const jwt = require("jsonwebtoken");
-const bcrypt = require("bcrypt");
-const User = require("../../models/user");
+const mongoose = require("mongoose");
+const bcrypt = require("bcrypt"); 
 
-module.exports = {
-  create,
-  login,
-  checkToken,
-};
+const User = mongoose.model("User");
 
-const create = async(req, res) =>{
+const create = async (req, res) => {
   try {
     const user = await User.create(req.body);
-    console.log(user)
+    console.log(user);
     const token = createJWT(user);
     res.json(token);
   } catch (err) {
     res.status(400).json(err);
   }
-}
+};
 
-const login = async(req, res) => {
+const login = async (req, res) => {
   try {
     const user = await User.findOne({ email: req.body.email });
     if (!user) throw new Error();
     const match = await bcrypt.compare(req.body.password, user.password);
     if (!match) throw new Error();
-    res.json(createJWT({
+    res.json(
+      createJWT({
         message: "Login successfully",
         data: user,
         error: null,
-    }));
+      })
+    );
   } catch (err) {
     console.log(err);
-    res
-        .status(400)
-        .json({
-            message: "Bad Credentials",
-            data: null,
-            error: err,
-        });
+    res.status(400).json({
+      message: "Bad Credentials",
+      data: null,
+      error: err,
+    });
   }
-}
+};
 
 function checkToken(req, res) {
   console.log("req.user", req.user);
@@ -50,5 +46,11 @@ function checkToken(req, res) {
 /*-- Helper Functions --*/
 
 function createJWT(user) {
-  return jwt.sign({ user }, process.env.SECRET, { expiresIn: "24h" });
+  return jwt.sign({ user }, process.env.API_SECRET, { expiresIn: "24h" });
 }
+
+module.exports = {
+  create,
+  login,
+  checkToken,
+};

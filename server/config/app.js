@@ -2,6 +2,8 @@ const cors = require("cors");
 const express = require("express");
 const helmet = require("helmet");
 
+const routes = require('../routers')
+
 const {
   errorConverter,
   errorHandler,
@@ -19,7 +21,7 @@ app.use(cors());
 app.options("*", cors());
 
 /* API routes */
-// app.use(`/api`, routes);
+app.use(`/api`, routes);
 
 /* Error Handling */
 app.use(errorConverter);
