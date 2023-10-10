@@ -12,8 +12,8 @@ const AuthPage = ({ setUser }) => {
 
   return (
     <div className="auth-page">
-      <h1 className="ledgerly">Ledgerly</h1>
-      <h3>{showSignUpForm ? "Welcome to Ledgerly" : "Welcome back!"}</h3>
+      <h1 className="Genix">Genix</h1>
+      <h3>{showSignUpForm ? "Welcome to Genix" : "Welcome back!"}</h3>
       {showSignUpForm ? (
         <SignUpForm setUser={setUser} />
       ) : (
@@ -22,7 +22,7 @@ const AuthPage = ({ setUser }) => {
       <Link onClick={() => setShowSignUpForm(!showSignUpForm)}>
         {showSignUpForm
           ? "Already a user? Log in here."
-          : "New to Ledgerly? Sign up here."}
+          : "New to Genix? Sign up here."}
       </Link>
     </div>
   );

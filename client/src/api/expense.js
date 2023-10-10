@@ -1,6 +1,6 @@
 import request from "../services/request";
 
-const BASE_URL = "/api/expenses";
+const BASE_URL = "http://localhost:5000/api/expenses";
 
 export async function createExpense(expenseFormData) {
   return await request(`${BASE_URL}`, "POST", expenseFormData);

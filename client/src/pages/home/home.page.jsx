@@ -9,7 +9,7 @@ const LandingPage = () => {
     <div className="home-page">
       <div className="hero-container">
         <div className="text-container">
-          <h1 className="ledgerly">Ledgerly</h1>
+          <h1 className="Genix">Genix</h1>
           <h2>Giving you the tools to financial freedom.</h2>
           <Link to="/login">
             log in / sign up&nbsp;&nbsp;

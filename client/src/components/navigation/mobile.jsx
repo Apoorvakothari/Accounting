@@ -14,7 +14,7 @@ const MobileNavigation = ({ setUser }) => {
   return (
     <nav>
       <div>
-        <h1>Ledgerly</h1>
+        <h1>Genix</h1>
       </div>
       <div className="nav-links">
         <Link to="/">Dashboard</Link>

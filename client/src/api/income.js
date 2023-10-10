@@ -1,6 +1,6 @@
 import request from "../services/request";
 
-const BASE_URL = "/api/incomes";
+const BASE_URL = "http://localhost:5000/api/incomes";
 
 export async function createIncome(incomeFormData) {
   return await request(`${BASE_URL}`, "POST", incomeFormData);

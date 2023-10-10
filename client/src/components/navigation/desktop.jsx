@@ -27,7 +27,7 @@ const Navigation = ({ setUser }) => {
     <>
       <nav className={`${menuOpen ? "open" : ""}`}>
         <div>
-          <h1 className="ledgerly">Ledgerly</h1>
+          <h1 className="Genix">Genix</h1>
         </div>
         <div className="nav-links">
           <Link to="/">Dashboard</Link>
