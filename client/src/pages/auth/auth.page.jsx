@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import LoginForm from "../../components/LoginForm/LoginForm";
 import SignUpForm from "../../components/SignUpForm/SignUpForm";
 
-import "./auth-page.css";
+import "./auth.css";
 
 const AuthPage = ({ setUser }) => {
   const [showSignUpForm, setShowSignUpForm] = useState(false);

@@ -4,7 +4,7 @@ import ExpenseForm from "../../components/ExpenseForm/ExpenseForm";
 import ExpensesFilterForm from "../../components/ExpensesFilterForm/ExpensesFilterForm";
 import * as expensesAPI from "../../utilities/expenses-api";
 
-import "./ExpensesPage.css";
+import "./expense.css";
 
 const ExpensesPage = () => {
   const [expenses, setExpenses] = useState([]);

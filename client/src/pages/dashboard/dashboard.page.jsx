@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-import "./dashboard-page.css";
+import "./dashboard.css";
 
 const DashboardPage = ({ user }) => {
   return (
