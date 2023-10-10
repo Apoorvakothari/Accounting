@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import HeroImage from "../../assets/images/woman.jpg";
+// import HeroImage from "../../assets/images/woman.jpg";
 
 import "./home.css";
 
@@ -30,7 +30,7 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
-        <img className="hero" src={HeroImage} />
+        {/* <img className="hero" src={HeroImage} /> */}
       </div>
     </div>
   );

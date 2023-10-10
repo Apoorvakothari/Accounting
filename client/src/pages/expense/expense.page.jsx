@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
-import ExpenseForm from "../../components/ExpenseForm/ExpenseForm";
-import ExpensesFilterForm from "../../components/ExpensesFilterForm/ExpensesFilterForm";
-import * as expensesAPI from "../../utilities/expenses-api";
+import ExpenseForm from "../../components/expense-form";
+import ExpensesFilterForm from "../../components/expense-filter-form";
+import * as expensesAPI from "../../api/expense";
 
 import "./expense.css";
 

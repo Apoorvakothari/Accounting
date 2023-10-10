@@ -2,8 +2,8 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-import LoginForm from "../../components/LoginForm/LoginForm";
-import SignUpForm from "../../components/SignUpForm/SignUpForm";
+import LoginForm from "../../components/login";
+import SignUpForm from "../../components/signup";
 
 import "./auth.css";
 

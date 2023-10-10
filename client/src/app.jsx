@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 
-import Navigation from "../../components/Navigation/Navigation";
-import { getUser } from "../../utilities/users-service";
+import Navigation from "./components/navigation/desktop";
+import { getUser } from "./services/user";
 
 import AuthPage from "./pages/auth/auth.page";
 import DashboardPage from "./pages/dashboard/dashboard.page";

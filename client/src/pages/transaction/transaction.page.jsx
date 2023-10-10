@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import ReactToPrint from "react-to-print";
 
-import TransactionsFilterForm from "../../components/TransactionsFilterForm/TransactionsFilterForm";
-import * as expensesAPI from "../../utilities/expenses-api";
-import * as incomesAPI from "../../utilities/incomes-api";
+import TransactionsFilterForm from "../../components/transaction-filter-form";
+import * as expensesAPI from "../../api/expense";
+import * as incomesAPI from "../../api/income";
 
-import "./TransactionsPage.css";
+import "./transaction.css";
 
 const TransactionsPage = () => {
   const [transactions, setTransactions] = useState([]);

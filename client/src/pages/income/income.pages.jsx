@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
-import IncomeForm from "../../components/IncomeForm/IncomeForm";
-import IncomesFilterForm from "../../components/IncomesFilterForm/IncomesFilterForm";
-import * as incomesAPI from "../../utilities/incomes-api";
+import IncomeForm from "../../components/income-form";
+import IncomesFilterForm from "../../components/income-filter-form";
+import * as incomesAPI from "../../api/income";
 
 import "./income.css";
 
