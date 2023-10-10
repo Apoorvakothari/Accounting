@@ -1,0 +1,45 @@
+.dashboard-page {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin: 5em;
+    width: 50vw;
+  }
+  
+  .dashboard-page > div > h1 {
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 200;
+    padding: 0;
+  }
+  
+  .dashboard-page > div > h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+  }
+  
+  @media screen and (max-width: 1000px) {
+    .dashboard-page {
+      margin: 5em auto;
+      width: 60vw;
+    }
+  }
+  
+  @media screen and (max-width: 650px) {
+    .dashboard-page {
+      margin: 7em auto;
+      width: 90vw;
+    }
+  
+    .dashboard-page > div > h1 {
+      font-size: 0.8rem;
+    }
+  
+    .dashboard-page > div > h2 {
+      font-size: 1.8rem;
+      font-weight: 200;
+    }
+  }
+  

@@ -1,0 +1,5 @@
+.app {
+  display: flex;
+  background: linear-gradient(to top, rgb(24, 24, 24), rgb(26, 25, 25));
+  min-height: 100vh;
+}
